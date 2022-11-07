@@ -1,8 +1,9 @@
 # AR Measurement
 ##### Developed by Lanique Lynn Peterson
+###### Built using Xcode 
 ## Augmented Reality iOS Measurement App
 
-[<img width="" alt="Lanique Peterson Augmented Reality" src="https://media.giphy.com/media/oDvfAX0KkdfdTOkAX4/giphy-downsized-large.gif">](https://github.com/La-Nique/)
+[<img src="https://media.giphy.com/media/3PpCUqPtu0KJWQwulU/giphy-downsized.gif" width="330" alt="Lanique Peterson Augmented Reality App Demo">](https://github.com/La-Nique/)
 
 ### Application Description:
 
