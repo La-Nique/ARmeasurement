@@ -23,8 +23,6 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Set the view's delegate
         sceneView.delegate = self
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,17 +42,45 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.session.pause()
     }
     
-    // touch gesture, for when you open the app
-    // touch from which point to which point you'd like to calculate
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-     if dotNodes.count >= 2 { resetDots() }
+    // when you open app, "touch gesture" from point to point
+    // that you'd like to calculate in 3D space
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?)
+    {
+        // if you touch more than twice, the nodes will be removed.
+        if dotNodes.count >= 2
+        {
+            resetDots()
+        }
 
-     if let touchLocation = touches.first?.location(in: sceneView) {
-          let hitTestResults = sceneView.hitTest(touchLocation, types: .featurePoint)
-          if let hitResult = hitTestResults.first {
-              addDot(at: hitResult)
-          }
-      }
+         if let touchLocation = touches.first?.location(in: sceneView)
+         {
+            let hitTestResults = sceneView.hitTest(touchLocation, types: .featurePoint)
+             
+            if let hitResult = hitTestResults.first
+            {
+                addDot(at: hitResult)
+            }
+             
+         }
+        // Apple Code:
+        //            let estimatedPlane: ARRaycastQuery.Target = .estimatedPlane
+        //            let alignment: ARRaycastQuery.TargetAlignment = .any
+        //
+        //            // calucating the measurement from end to start position:
+        //            let query: ARRaycastQuery? = sceneView.raycastQuery(from: touchLocation,
+        //                                                                allowing: estimatedPlane,
+        //                                                                alignment: alignment)
+        //
+        //            if let nonOptQuery: ARRaycastQuery = query
+        //            {
+        //                let result: [ARRaycastResult] = sceneView.session.raycast(nonOptQuery)
+        //
+        //                guard let rayCast: ARRaycastResult = result.first
+        //                else { return }
+        //
+        //                addDot(at: rayCast)
+        //            }
+                    // end of Apple Code
      }
     
     // adding red dots to screen
@@ -79,8 +105,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         dotNodes.append(dotNode)
 
-        // we have 2 points on scree, try to calculate distance
-        if dotNodes.count >= 2 {
+        // if 2 dots on screen, calculate distance
+        if dotNodes.count >= 2
+        {
             calculateDistance()
         }
     }
@@ -88,8 +115,8 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     // given the two dots on the screen, calculate the distance between them
     // from meters to inches
     func calculateDistance() {
-         let start = dotNodes.first!
-         let end = dotNodes.last!
+         let start = dotNodes.first! // dotNodes[0]
+         let end = dotNodes.last! // dotNodes[1]
          
          var distance = sqrt(
              pow(end.position.x - start.position.x, 2) +
@@ -99,13 +126,19 @@ class ViewController: UIViewController, ARSCNViewDelegate {
          
          // convert to cm
          distance *= 100
+//        let heightMeter = Measurement(value: meterValue ?? 0, unit: UnitLength.meters)
+//        // convert to inches
+//        let heightInches = heightMeter.converted(to: UnitLength.inches)
+//        // convert to centimeters
+//        // let heightCentimeters = heightMeter.converted(to: UnitLength.centimeters)
      
          let distanceFormatted = String(format: "%.2f cm", abs(distance))
          updateText(text: distanceFormatted, atPosition: end.position)
      }
     
     // displays distance between dots in text
-    func updateText( text: String, atPosition: SCNVector3 ) {
+    func updateText( text: String, atPosition: SCNVector3 )
+    {
          textNode.removeFromParentNode()
      
          let textGeometry = SCNText(string: text, extrusionDepth: 1.0)
