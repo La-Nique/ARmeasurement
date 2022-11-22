@@ -12,7 +12,7 @@
 A simple Augmented Reality application that measures the distance between two points in 3D space
 
 ## System Requirements
-Apple Phone or iPad with AR compatibility.
+Apple Phone or iPad with AR capabilities.
 
 ## Instructions
 xxx
