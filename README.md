@@ -1,6 +1,6 @@
 # AR Measurement: Augmented Reality iOS Measurement App
 ##### Developed by Lanique Lynn Peterson
-###### Built on XCode using Swift with UIKit, ARKit, and SceneKit
+###### Built on XCode using Swift and UIKit, ARKit, and SceneKit frameworks
 
 ## App Demo 
 (tested on one of my bookcases):
@@ -15,6 +15,10 @@ A simple Augmented Reality application that measures the distance between two po
 Apple Phone or iPad with AR capabilities.
 
 ## Instructions
-xxx
+Download the application onto your device.
+
+Tap the screen on your phone once to select the beginning point.
+
+Tap the screen a second time to select the end point of the measurement.
 
 ###### all rights reserved
