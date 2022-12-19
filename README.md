@@ -1,24 +1,28 @@
-# AR Measurement: Augmented Reality iOS Measurement App
-##### Developed by Lanique Lynn Peterson
-###### Built on XCode using Swift and UIKit, ARKit, and SceneKit frameworks
+# AR Measurement: Augmented Ruler Mobile App
+#### Developed by Lanique Peterson
 
-## App Demo 
-(tested on one of my bookcases):
+## Description:
+
+A simple app that measures the distance between two points in 3D space.
+
+#### Code + Frameworks:
+
+Developed on Xcode with Swift.<br>
+UIKit, ARKit, and SceneKit frameworks were used to create ARmeasurement.
+
+### App Demo [courtesy of one of my bookcases]:
 
 [<img src="https://media.giphy.com/media/3PpCUqPtu0KJWQwulU/giphy-downsized.gif" width="330" alt="Lanique Peterson Augmented Reality App Demo">](https://github.com/La-Nique/)
 
-### Application Description:
+### How To Use:
 
-A simple Augmented Reality application that measures the distance between two points in 3D space
+- Tap the screen on your phone once to select the beginning point.
+- Tap the screen a second time to select the end point of the measurement.
 
-## System Requirements
-Apple Phone or iPad with AR capabilities.
+### System Requirements:
 
-## Instructions
-Download the application onto your device.
+Apple Phone or iPad with AR capabilities. This application cannot be used on desktop.
 
-Tap the screen on your phone once to select the beginning point.
+### Ponders:
 
-Tap the screen a second time to select the end point of the measurement.
-
-###### all rights reserved
+This application was built in conjunction with another extended reality project I am currently working on. This is a small piece of a larger idea I am developing with my team. We came to discover near exact measurements can be taken within XR.
